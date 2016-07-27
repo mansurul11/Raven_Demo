@@ -1,0 +1,135 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+    <head>    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/drag-drop.css' %}">
+        <link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sb-admin-2.css' %}">
+        <script src="{% static "js/jquery.min.js" %}"></script>
+        <script src="{% static "js/jquery.sortable.min.js" %}"></script>
+        <script src="{% static "js/jquery-ui-1.10.4.custom.min.js" %}"></script>
+        
+        <script type="text/javascript">
+      		$(function () {
+        		$(".source, .target").sortable({
+          			connectWith: ".connected"
+        		});
+      		});
+      		function updateValues1() {
+      			var items = [];
+    			$("ul.target").children().each(function() {
+      				var item = $(this).text();
+      				items.push(item);
+    			});
+      			$.post(postUrl, {terid: items}, function(response){
+    				alert(response);
+				});
+      		}
+      		 function updateValues() {
+    			var items = [];
+    			$("ul.target").children().each(function() {
+      				var item = $(this).text();
+      				items.push(item);
+    			});
+    			
+    			var jsonData = JSON.stringify(items);		
+    			//alert(jsonData);				
+    			$.ajax ({
+	      			url: 'http://127.0.0.1:8000/Raven/',
+	      			type: 'GET',
+	      			data: {key:jsonData},
+	      			dataType: 'text',
+	      			
+	      			success: function() {
+                        //document.write(result)
+                        //alert("error1")
+                        },
+	      			error: function(){alert("error")}
+    			});
+  			};
+    	</script>
+        <title>Virtual Real Estate Agent</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0" role="navigation">
+        <div class="navbar-header navbar-right">
+        <a class="navbar-brand" href="/Raven">Start Over</a>
+        </div>
+        </nav>
+        <div class="page-header">
+            <h1 align="center"><a href="/Raven">RAVEN: Virtual Real Estate Agent</a></h1>
+        </div>
+        
+        
+        <div id="wrapper">
+        	<div class="container-fluid">
+        		<div class="row">
+        			<div class="col-lg-12">
+						<p class="lead"><font face="Ubuntu"> These are the houses we pick for you according to your feedback. We
+						mark the house features that match with your choice using red text.</font></p>
+					</div>
+        		</div>
+        		
+        		
+        		<div class="row">
+        			<div class="col-lg-12">
+        				<div class="panel panel-default">
+        					<div class="panel-heading">
+        					<font face="Roboto"> <b>House Features Of Your Choice:</b></font>
+        					</div>
+        					<div class="panel-body">
+        						
+        							{% for c in content%}
+        							<font> {{ c }} </font>,  
+        							{% endfor %}
+        						 
+		 				
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="row">	
+        			<div class="col-lg-12">
+        				<div class="panel panel-default">
+        					<div class="panel-heading">
+        					 <font face="Roboto"> <b>Top 10 Percent Houses: </b></font>
+        					</div>
+        					<div class="panel-body">
+							    <div class="list-group">
+        						{% for c in tophouses %}
+        							<li class="list-group-item" >
+        							<strong> House Features</strong>: 
+        							{% for key in c.0.0.0 %}
+        							<font style="color:#d93636;"> {{key}} </font>,
+        							{% endfor %}
+        							{% for key in c.0.0.1 %}
+        							<font> {{key}} </font>,
+        							{% endfor %}
+        							</br>
+        							<b> Price: </b>{{c.0.1}}
+        							</br>
+        							<b> Address: </b> {{c.0.2}}
+        							</br>
+        							<b> Confidence Score: </b>{{ c.1 }}
+        							</li>
+		 						{% endfor %} 
+		 						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        
+    </body>
+
+</html>
+
+

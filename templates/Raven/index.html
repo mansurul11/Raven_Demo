@@ -1,0 +1,324 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+        <!--link rel="stylesheet" href="{% static 'css/IPM_CSS.css' %}"-->
+        <link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sb-admin-2.css' %}">
+        <link rel="stylesheet" href="{% static 'css/tooltipster.css' %}">
+        <title>Virtual Real Estate Agent</title>
+        <script src="{% static "js/jquery.min.js" %}"></script>
+        <script src="{% static "js/jquery.sortable.min.js" %}"></script>
+        <script src="{% static "js/jquery-ui-1.10.4.custom.min.js" %}"></script>
+        <script src="{% static "js/jquery.tooltipster.min.js" %}"></script>
+        <script src="{% static "js/mytooltip.js" %}"></script>
+        
+        <script type="text/javascript">
+        $(function() {
+
+    		$("#about-btn").click( function(event) {
+        		alert("You clicked the button using JQuery!");
+    		});
+		});
+		
+		
+        $(document).ready(function() {
+            $('#Screen_porch').tooltipster({
+                content: $('<span><img src="{% static "images/Screen_porch.jpeg" %}"/> </span>')
+            });
+            $('#Screen_porch').tooltipster({
+                content: $('<span><img src="{% static "images/Screen_porch.jpeg" %}"/> </span>')
+            });
+            $('#Hardwood_floor').tooltipster({
+                content: $('<span><img src="{% static "images/Hardwood_floor.jpeg" %}"/></span>')
+            });
+            $('#Parquet_floor').tooltipster({
+                content: $('<span><img src="{% static "images/Parquet_floor.jpeg" %}"/></span>')
+            });
+            $('#Bathroom_and_Kitchen_tile_styling_floor').tooltipster({
+                content: $('<span><img src="{% static "images/Bathroom_and_Kitchen_tile_styling_floor.jpeg" %}"/></span>')
+            });
+            $('#Vinyl_style_flooring').tooltipster({
+                content: $('<span><img src="{% static "images/Vinyl_style_flooring.jpeg" %}"/></span>')
+            });
+            $('#Marble_floor').tooltipster({
+                content: $('<span><img src="{% static "images/Marble_floor.jpeg" %}"/></span>')
+            });
+            
+            $('#Wood_fireplace').tooltipster({
+                content: $('<span><img src="{% static "images/Wood_fireplace.jpeg" %}"/></span>')
+            });
+            $('#Masonry_fireplace').tooltipster({
+                content: $('<span><img src="{% static "images/Masonry_fireplace.jpeg" %}"/></span>')
+            });
+            $('#Slate_fireplace').tooltipster({
+                content: $('<span><img src="{% static "images/Slate_fireplace.jpeg" %}"/></span>')
+            });
+            $('#Brick_fireplace').tooltipster({
+                content: $('<span><img src="{% static "images/Brick_fireplace.jpeg" %}"/></span>')
+            });
+            $('#Kitchen_center_island').tooltipster({
+                content: $('<span><img src="{% static "images/Kitchen_center_island.jpeg" %}"/></span>')
+            });
+            $('#Bathroom_Vanity').tooltipster({
+                content: $('<span><img src="{% static "images/Bathroom_Vanity.jpeg" %}"/></span>')
+            });
+            
+            $('#Crown_molding').tooltipster({
+                content: $('<span><img src="{% static "images/Crown_molding.jpeg" %}"/></span>')
+            });
+            $('#Vaulted_and_cathedral_ceiling').tooltipster({
+                content: $('<span><img src="{% static "images/Vaulted_and_cathedral_ceiling.jpeg" %}"/></span>')
+            });
+            $('#Soaring_ceiling').tooltipster({
+                content: $('<span><img src="{% static "images/Soaring_ceiling.jpeg" %}"/></span>')
+            });
+            $('#Coffered_ceilings').tooltipster({
+                content: $('<span><img src="{% static "images/Coffered_ceilings.jpeg" %}"/></span>')
+            });
+            $('#Garden_tub').tooltipster({
+                content: $('<span><img src="{% static "images/Garden_tub.jpeg" %}"/></span>')
+            });
+            $('#Jetted_tub').tooltipster({
+                content: $('<span><img src="{% static "images/Jetted_tub.jpeg" %}"/></span>')
+            });
+            
+            $('#Jacuzzi_hot_tub').tooltipster({
+                content: $('<span><img src="{% static "images/Jacuzzi_hot_tub.jpeg" %}"/></span>')
+            });
+            $('#Granite_countertop_and_island').tooltipster({
+                content: $('<span><img src="{% static "images/Granite_countertop_and_island.jpeg" %}"/></span>')
+            });
+            $('#Corian_countertop_and_island').tooltipster({
+                content: $('<span><img src="{% static "images/Corian_countertop_and_island.jpeg" %}"/></span>')
+            });
+            $('#Quartz_countertop_and_island').tooltipster({
+                content: $('<span><img src="{% static "images/Quartz_countertop_and_island.jpeg" %}"/></span>')
+            });
+            $('#Egress_window').tooltipster({
+                content: $('<span><img src="{% static "images/Egress_window.jpeg" %}"/></span>')
+            });
+            $('#Ceiling_window').tooltipster({
+                content: $('<span><img src="{% static "images/Ceiling_window.jpeg" %}"/></span>')
+            });
+            $('#Pergola').tooltipster({
+                content: $('<span><img src="{% static "images/Pergola.jpeg" %}"/></span>')
+            });
+            $('#CulDeSac_corner_lot').tooltipster({
+                content: $('<span><img src="{% static "images/CulDeSac_corner_lot.jpeg" %}"/></span>')
+            });
+	    $('#Open_Concept_kitchen').tooltipster({
+                content: $('<span>Makes use of large, open spaces and minimizes the use of small, enclosed rooms</span>')
+            });
+            $('#Gourmet_kitchen').tooltipster({
+                content: $('<span>A gourmet kitchen is a kitchen with professional appliances of high performance. Easy-to-clean surfaces, and storage for specialty items.</span>')
+            });
+            $('#Walkin_closet').tooltipster({
+                content: $('<span>A closet where you can step inside to pick out your clothes.</span>')
+            });
+            $('#Lage_patio').tooltipster({
+                content: $('<span>A large paved outdoor area adjoining a house.</span>')
+            });
+            $('#Deck').tooltipster({
+                content: $('<span> An open, unroofed porch or platform extending from a house or other building. </span>')
+            });
+            $('#2story_house').tooltipster({
+                content: $('<span> Having two floors or levels. </span>')
+            });
+	    $('#Sprinkler_system').tooltipster({
+                content: $('<span> A system for protecting a building against fire by means of overhead pipes which convey an extinguishing fluid (as water) to heat-activated outlets. </span>')
+            });
+            $('#Irrigation_system').tooltipster({
+                content: $('<span> Water is distributed through a system of pipes usually by pumping. </span>')
+            });
+            $('#Furnace').tooltipster({
+                content: $('<span> A structure or apparatus in which heat may be generated, as for heating houses,  </span>')
+            });
+            $('#Open_concept').tooltipster({
+                content: $('<span> Having few or no internal walls or partitions </span>')
+            });
+            $('#Walkin_pantry').tooltipster({
+                content: $('<span> A pantry (place to keep groceries) where you can step inside to pick out your cooking materials. </span>')
+            });
+            $('#Above_Average_Quality_Primary_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 8-10.  </span>')
+            });
+            $('#Average_Quality_Primary_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 4-7. </span>')
+            });
+            $('#Below_Average_Quality_Primary_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 1-3. </span>')
+            });
+            $('#Above_Average_Quality_Middle_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 8-10.  </span>')
+            });
+            $('#Average_Quality_Middle_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 4-7. </span>')
+            });
+            $('#Below_Average_Quality_Middle_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 1-3. </span>')
+            });
+            $('#Above_Average_Quality_High_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 8-10.  </span>')
+            });
+            $('#Average_Quality_High_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 4-7. </span>')
+            });
+            $('#Below_Average_Quality_High_School').tooltipster({
+                content: $('<span> Weighted GreatSchools rating of 1-3. </span>')
+            });
+        });
+		</script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0" role="navigation">
+        <div class="navbar-header navbar-right">
+        <a class="navbar-brand" href="/Raven/Documentation/">Documentation</a>
+        </div>
+        </nav>
+        <div class="page-header">
+            <h1 align="center"><a href="/Raven">RAVEN: Virtual Real Estate Agent</a></h1>
+        </div>
+       
+        <!--div id="wrapper"-->
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-lg-12">
+						<p class="lead"><font face="Ubuntu">Let us know which set of house features you like/almost-like by clicking the corresponding checkbox.</font></p>
+					</div>
+        		</div>
+        		
+        		
+        		<div class="row">
+        			<div class="col-lg-12">
+        				<div class="panel panel-default">
+        					<div class="panel-heading">
+        					<font face="Ubuntu" size="4"> House Features Panel: (Hover over underlined features for visual illustration and others to see definition.)</font>
+        					</div>
+        					<div class="panel-body">
+        					<form class="form-inline" id="category_form" method="post" action="/Raven/">
+        						    {% csrf_token %}
+        						
+        							<li class="list-group-item" >
+        								{{form.fb1}} 
+        								{% if content.0.0 %}
+        								{% for key in content.0.0 %}
+        								<label id="{{key.split|join:"_"}}"><u> {{key}},</u> </label>
+        								{% endfor %}
+        								{% endif %}
+        								{% if content.0.1 %}
+        								{% for key in content.0.1 %}
+        								<label id="{{key.split|join:"_"}}" > {{key}}, </label>
+        								{% endfor %}
+        								{% endif %}
+        								</br>
+        								<span class="label label-warning"> Median Price : {{price.0.0}} </span> 									<b> &nbsp;& </b>
+        								<span class="label label-success"> Average Price  : {{price.0.1}}</span>
+        								<span>of houses with these features</span>
+        							</li>
+        							<li class="list-group-item" >
+        								{{form.fb2}} 
+        								{% if content.1.0 %}
+        								{% for key in content.1.0 %}
+        								<label id="{{key.split|join:"_"}}"> <u> {{key}}, </u> </label>
+        								{% endfor %}
+        								{% endif %}
+        								{% if content.1.1 %}
+        								{% for key in content.1.1 %}
+        								<label id="{{key.split|join:"_"}}" > {{key}}, </label>
+        								{% endfor %}
+        								{% endif %}
+        								</br> 
+        								<span class="label label-warning"> Median Price : {{price.1.0}}</span>
+									<b> &nbsp;& </b>
+        								<span class="label label-success"> Average Price  : {{price.1.1}}</span>
+        								<span>of houses with these features</span>
+        							</li>
+        							<li class="list-group-item" >
+        								{{form.fb3}}
+        								{% if content.2.0 %}
+        								{% for key in content.2.0 %}
+        								<label id="{{key.split|join:"_"}}"><u> {{key}}, </u> </label>
+        								{% endfor %}
+        								{% endif %}
+        								{% if content.2.1 %}
+        								{% for key in content.2.1 %}
+        								<label id="{{key.split|join:"_"}}" > {{key}}, </label>
+        								{% endfor %}
+        								{% endif %}
+        								</br> 
+        								<span class="label label-warning"> Median Price : {{price.2.0}}</span>
+									<b> &nbsp;& </b>
+        								<span class="label label-success"> Average Price  : {{price.2.1}}</span>
+        								<span>of houses with these features</span>
+        							</li>
+        							<li class="list-group-item" >
+        								{{form.fb4}}
+        								{% if content.3.0 %}
+        								{% for key in content.3.0 %}
+        								<label id="{{key.split|join:"_"}}"> <u> {{key}},</u> </label>
+        								{% endfor %}
+        								{% endif %}
+        								{% if content.3.1 %}
+        								{% for key in content.3.1 %}
+        								<label id="{{key.split|join:"_"}}" > {{key}}, </label>
+        								{% endfor %}
+        								{% endif %}
+        								</br> 
+									<span class="label label-warning"> Median Price : {{price.3.0}}</span>
+									<b> &nbsp;& </b>
+        								<span class="label label-success"> Average Price  : {{price.3.1}}</span>
+        								<span>of houses with these features</span>
+        							</li>
+        							<li class="list-group-item" >
+        								{{form.fb5}}
+        								{% if content.4.0 %}
+        								{% for key in content.4.0 %}
+        								<label id="{{key.split|join:"_"}}"><u> {{key}}, </u></label>
+        								{% endfor %}
+        								{% endif %}
+        								{% if content.4.1 %}
+        								{% for key in content.4.1 %}
+        								<label id="{{key.split|join:"_"}}" > {{key}}, </label>
+        								{% endfor %}
+        								{% endif %}
+        								</br> 
+        								<span class="label label-warning"> Median Price : {{price.4.0}}</span>
+									<b> &nbsp;& </b>
+        								<span class="label label-success"> Average Price  : {{price.4.1}}</span>
+        								<span>of houses with these features</span>
+        							</li>
+        							<li class="list-group-item" >
+        								{{form.fb6}}
+        								<label style="color:#d93636;"> Tick only if you are tired of giving feedback :) 
+        								(not that we asked many!!!) </label>
+        							</li>	
+		 						    <br>
+            					<input class="btn btn-primary" type="submit" name="submit" value="Click This Button to Submit Your Feedback" />
+            					
+        					    </br>
+        					    
+        					</form>
+		 						
+        					</div>
+        				</div>
+        			</div>
+        			
+        		</div>
+        	</div>
+        <!--/div-->
+        
+    </body>
+
+</html>
+
+

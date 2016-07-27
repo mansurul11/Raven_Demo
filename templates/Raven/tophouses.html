@@ -1,0 +1,111 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/drag-drop.css' %}">
+        <link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sb-admin-2.css' %}">
+        <script src="{% static "js/jquery.min.js" %}"></script>
+        <script src="{% static "js/jquery.sortable.min.js" %}"></script>
+        <script src="{% static "js/jquery-ui-1.10.4.custom.min.js" %}"></script>
+        
+        <script type="text/javascript">
+      		$(function () {
+        		$(".source, .target").sortable({
+          			connectWith: ".connected"
+        		});
+      		});
+      		function updateValues1() {
+      			var items = "";
+    			$("ul.target").children().each(function() {
+      				var item = $(this).text();
+      				items = items + item + ","
+      				//items.push(item);
+    			});
+      			$.post(postUrl, {terid: items}, function(response){
+    				alert(response);
+				});
+      		}
+      		 function updateValues() {
+    			var items = "";
+    			$("ul.target").children().each(function() {
+      				var item = $(this).text().trim();
+      				//items.push(item);
+      				items = items + item + ","
+    			});
+    			
+    			var jsonData = JSON.stringify(items);		
+    			//alert(jsonData);				
+    			$.ajax ({
+	      			url: 'http://127.0.0.1:8000/Raven/',
+	      			type: 'POST',
+	      			//data: {key:jsonData},
+	      			data: {key:jsonData, 'csrfmiddlewaretoken': '{{csrf_token}}'},
+	      			//dataType: 'text',
+	      			
+	      			success: function(result) {
+	      			    //html(result)
+                        document.write(result)
+                        document.close()
+                        //$('#wrapper').html(result);
+                        //alert("error1")
+                        },
+	      			error: function(){alert("error")}
+    			});
+  			};
+    	</script>
+        <title>Virtual Real Estate Agent</title>
+    </head>
+
+    <body>
+    
+        <div class="page-header">
+            <h1 align="center"><a href="/Raven">RAVEN: Virtual Real Estate Agent</a></h1>
+        </div
+        
+         <--div id="wrapper"-->
+         <div class="container">
+            <div class="row">
+        			<div class="col-lg-12">
+						<p class="lead"><font face="Ubuntu">Welcome to the 2nd stage optional feedback session. Please 
+						drag and drop keywords that you don't prefer from the left list to the right list.</font></p>
+					</div>
+        	</div>
+            <div class="row">
+            	<div class="col-lg-6">
+            	                <h4><span class="label label-primary">Here are the house features that we pick for you</span></h4>
+        			<ul class="source connected">
+				
+        			    {% for c in content %}
+        					<li>
+        						{{ c }}
+        					</li>
+		 				{% endfor %} 
+        			</ul>
+      			</div>
+      			<div class="col-lg-6">
+      			<h4><span class="label label-primary">Drag & Drop features that you don't like from left list</span></h4>		
+        			<ul class="target connected">
+      				
+    				</ul>
+      			</div>
+    		</div>
+    		
+    		<input class="btn btn-primary" type="button" name="submit" value="Click This Button To See What Houses We Found For You" onclick="updateValues();" />
+    		</br>
+    		</br>
+        </div>
+        
+    
+        
+    </body>
+
+</html>
+
+

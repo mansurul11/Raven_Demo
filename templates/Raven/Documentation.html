@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/drag-drop.css' %}">
+        <link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sb-admin-2.css' %}">
+        <script src="{% static "js/jquery.min.js" %}"></script>
+        <script src="{% static "js/jquery.sortable.min.js" %}"></script>
+        <script src="{% static "js/jquery-ui-1.10.4.custom.min.js" %}"></script>
+ <title>Virtual Real Estate Agent</title>
+    </head>
+
+<body>
+    
+        <div class="page-header">
+            <h1 align="center"><a href="/Raven">RAVEN: Virtual Real Estate Agent</a></h1>
+        </div>
+
+        <div class="container">
+        		<div class="row">
+        			<div class="col-lg-12">
+						<p class="lead"><font face="Ubuntu">Documentation of Raven.</font></p>
+					</div>
+        		</div>
+ 
+			<div class="row">
+        			<div class="col-lg-12">
+        				<div class="panel panel-default">
+        					<div class="panel-heading">
+        					<font face="Ubuntu" size="4"> Watch Raven in Action</font>
+			</div>
+			<div class="panel-body">
+                        <video width="1080" height="620" controls autoplay>
+			<source src="{% static "images/Raven_In_Action.mp4" %}" type="video/mp4"></source>
+ 			</video>
+			</div>
+
+			<div class="row">
+        			<div class="col-lg-12">
+        				<div class="panel panel-default">
+        					<div class="panel-heading">
+        					<font face="Ubuntu" size="4"> Level One Feedback Module</font>
+			</div>
+			<div class="panel-body">
+			<span><img src="{% static "images/level1.jpg" %}"/></span>
+			</div>
+
+			<div class="row">
+        			<div class="col-lg-12">
+        				<div class="panel panel-default">
+        					<div class="panel-heading">
+        					<font face="Ubuntu" size="4"> Level One Feedback Module</font>
+			</div>
+			<div class="panel-body">
+			<span><img src="{% static "images/level2.jpg" %}"/></span>
+			</div>
+			<div class="row">
+        			<div class="col-lg-12">
+        				<div class="panel panel-default">
+        					<div class="panel-heading">
+        					<font face="Ubuntu" size="4"> Level One Feedback Module</font>
+			</div>
+			<div class="panel-body">
+			<span><img src="{% static "images/reco.jpg" %}"/></span>
+			</div>
+        </div>
+        <p class="lead"><font face="Ubuntu">Loading of Raven May take some time because Raven reads the summary pattern from flat file, in future version we will use efficient storage</font></p>
+
+</body>
